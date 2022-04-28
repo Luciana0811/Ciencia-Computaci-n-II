@@ -1,0 +1,190 @@
+ALUMNA: LUCIANA HUAMAN COAQUIRA
+CUI:20210671
+//EJERCICIO 1
+
+/*#include <iostream>
+using namespace std;
+
+int main()
+	int numero1 , numero2,producto;
+ 	cout<<"INGRESAR DOS NUMEROS"<<endl;
+ 	cout<<"Ingresar primer numero: ";
+    cin>>numero1; // INGRESAR NUMERO 1
+    cout<<"Ingresar primer numero: ";
+ 	cin>>numero2; // INGRESAR NUMERO 2
+ 	producto=numero1 *numero2;
+ 	cout<<"El producto de los numeros es "<< producto<<endl;
+}*/
+
+
+//EJERCICIO 2
+/*#include <iostream>
+#include<cstring>
+
+using namespace std;
+
+int main()
+{
+    
+	char nombre[100];
+	char apellidopa[100];
+	char apellidoma[100];
+
+	cout<<"Indicar los siguientes datos:"<<endl;
+	cout<<"NOMBRE COMPLETO EN MINUSCULA "<<endl;
+	cin>>nombre;
+	cout<<"APELLIDO PATERNO EN MINUSCULA"<<endl;
+	cin>>apellidopa;
+	cout<<"APELLIDO MATERNO EN MINUSCULA "<<endl;
+	cin>>apellidoma;
+
+
+	cout<<"El correo es:" << nombre[0]<<apellidopa<<apellidoma[0]<<"@unsa.edu.pe";
+}*/
+
+//EJERCICIO 4
+/*#include <iostream>
+#include<cstring>
+
+using namespace std;
+int main() {
+    int h,m;
+    string tipo =" ";
+    cout<<"INDICAR LA HORA:";
+    cin>> h;
+    cout<<"INDICAR LOS MINUTOS: ";
+    cin>>m;
+    if (24>h and h>11)
+        {
+        tipo="pm";
+        }
+    else {
+        tipo="am";
+    }
+    if(25>h and h>12){
+        h=h-12;
+        }
+    cout<<"LA HORA RESULTANTE ES : "<<h<<":"<<m<<" "<< tipo <<endl;
+   
+}*/
+//EJERCICIO 5
+/*#include <iostream>
+using namespace std;
+    int main() {
+    int Resultado;
+    float flotante;
+    cout<<"INDICAR NUMERO FLOTANTE"<<endl;
+    cin>>flotante;
+    Resultado=flotante;
+    cout<<"EL RESULTADO ES "<<Resultado;
+    return 0;
+}*/
+
+// EJERCICIO 6
+
+/*#include<iostream>
+#include<string>
+
+using namespace std;
+int main(){
+    int numero;
+    string bi=" ";
+    cout<<"INDICAR NUMERO: ";
+    cin>>numero;
+    if(numero>100 && numero<999){
+        while(numero!=0){
+            if(numero%2==0){
+            bi="0"+bi;
+            }
+            else{
+            bi="1"+bi;
+            }
+            numero=(int) numero/2;
+        }
+        cout<<"NUMERO BINARIO CONVERTIDO: "<<bi;
+    }
+    else
+    cout<<"NO VALIDO";
+
+    return 0;
+}*/
+
+//EJERCICIO 7
+/*#include <iostream>
+using namespace std;
+int main(){
+     int numero1,numero2;
+      cout<<"INGRESAR PRIMER NUMERO"<<endl;
+        cin>>numero1;
+       cout<<"INGRESAR SEGUNDO NUMERO"<<endl;
+        cin>>numero2;
+        if(numero1%numero2==0){
+            cout<<numero2<<" ES DIVISOR DE "<<numero1;
+        }else{
+            if(numero2%numero1==0){
+            cout<<numero1<<" ES DIVISOR DE "<<numero2;
+            }else{
+            cout<<"NO SON DIVISORES ENTRE ELLOS";
+            }
+        }
+return 0;
+}*/
+
+//EJERCICIO 8
+/*
+#include <iostream>
+using namespace std;
+ 
+int main()
+    {
+        int c, n, suma;
+        float promedio;
+        suma = 0;
+        cout<<"INDICAR NUMERO DE ELEMENTOS ";
+        cin>>n;
+        int numero[n];
+        for ( c=0; c<n; c++ ) {
+            cout<<"INDICAR UN NUMERO ";
+            cin>>numero[c];
+            suma = suma + numero[c];
+        }
+        promedio = suma/n;
+        cout<<"LA MEDIA ES "<<promedio;
+ 
+    }
+*/
+//EJERCICIO 9
+/*
+#include<iostream>
+using namespace std;
+int main(){
+    int suma=0,numero=0;
+    for(int i=0;i<10;i++){
+        cout<<"INGRESAR 10 NUMEROS: ";
+        cin>>numero;
+    if(numero<0){
+        suma+=numero;
+        }
+    }
+    cout<<"LA SUMO TOTAL DE NEGATIVOS ES: "<<suma;
+    return 0;
+}*/
+
+//EJERCICIO 10
+
+/*#include <iostream>
+using namespace std;
+
+int main() {
+    char contra[20];
+    string contra_establecida=" ";
+    cout<<"INGRESE LA CONTRASE;A NUEVA"<<endl;
+    cin>>contra_establecida;
+    cout<<"INGRESE LA CONTRASEñA? "<<endl;
+    cin>>contra;
+    while(contra!=contra_establecida){
+        cout<<"INGRESE LA CONTRASEñA CORRECTA? "<<endl;
+        cin>>contra;
+    }
+    cout<<"CONTRASENA CORRECTA"<<endl;
+}*/
