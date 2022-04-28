@@ -1,0 +1,279 @@
+//ALUMNA: LUCIANA HUAMAN COAQUIRA
+//CUI:20210671
+
+//EJERCICIO 1
+
+/*#include <iostream>
+using namespace std;
+
+int main()
+{
+	int suma = 0; // LA VARIABLE SUMA INICIARA DESDE 0
+	for( int i = 2; i <= 100; i++ ){ // SE COLOCA LOS LIMITES
+ 
+    	if( i % 2 == 0 ) suma += i;
+	}
+	cout << "\nLa suma de los numeros pares de 2 al 100 es: " << suma << endl;
+	return 0;
+}*/
+
+//EJERCICIO 2
+/*#include <iostream>
+#include<cstring>
+
+using namespace std;
+
+
+int main ()
+{
+	int n=50,c=0,c2=0,res=0,nc=0;
+	cout<<"LISTA DE NUMEROS PRIMOS HASTA EL 50: ";
+  	for(c=1;c<=n;c++)
+  	{
+    	for(c2=1;c2<=c;c2++)
+    	{
+      	res=c%c2;
+      	if(res==0)
+      	{
+        	nc=nc+1;
+      	}
+    	}
+    	if(nc==2)
+    	{
+      	cout<<" "<<c;
+    	}
+    	nc=0;
+  }
+}*/
+
+//EJERCICIO 3
+/*
+#include <iostream>
+#include<cstring>
+
+using namespace std;
+
+
+int main ()
+{
+	int inicial=1, final=100, multiplo=5, total = 0;
+
+	for (int i = inicial; i <= final; i++)
+	{
+    	if (i % multiplo == 0)
+    	{
+        	cout << i << " ";
+        	total++;
+    	}
+	}
+
+	cout << "\nLa cantidad de multiplos de 5 es " << total << " en el rango de " << inicial << " a " << final <<endl;
+
+	return 0;
+
+}*/
+
+//EJERCICIO 4
+
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main()
+{
+    int x,y;
+    cin>>x;
+    cin>>y;
+    int contador=0;
+    bool activar_conteo_extra=false;
+    for (int i=x;i<=y;i+=1){
+        for (int j=2;j<=sqrt(i);j++){
+            if (i%j==0){
+                contador+=1;
+            }
+        }
+        if (contador==0){
+                   //bool activar_conteo_extra=false;
+
+        }
+        else if (contador!=0){
+                   bool activar_conteo_extra=true;
+
+        }
+        contador=0;
+        ;
+    }
+    int candidato;
+    if (activar_conteo_extra==true){
+    for (int k=1;k<x;k++){
+        cout<<"bucle";
+        candidato=x-k;
+        for (int j=2;j<=sqrt(candidato);j++){
+            if (candidato%j==0){
+                contador+=1;
+            }
+        }
+        if (contador==0){
+            cout<<candidato<<" es primo \n";
+
+        }
+        contador=0;
+        ;
+
+        candidato=y+k;
+        for (int j=2;j<=sqrt(candidato);j++){
+            if (candidato%j==0){
+                contador+=1;
+            }
+        }
+        if (contador==0){
+            cout<<candidato<<" es primo \n";
+        }
+        contador=0;
+        ;
+
+        }
+    }
+}
+
+//EJERCICIO 5
+/*#include <iostream> 
+using namespace std; 
+
+int main () 
+{
+	int n, num,menor=0,sum=0,media=0;
+	int mayor= 0;
+
+	cout<<"INDICAR LA CANTIDAD DE NUMEROS"<<endl;
+	cin>> n;
+
+	for (int i = 1; i <= n; i++)
+		{
+		cout<<"INDICAR NUMERO: "; cin>>num;
+		if(i == 1)
+			{ mayor = menor = num;}
+		if (num > mayor)
+			{ mayor = num; }
+		if (num < menor)
+			{ menor = num; }
+		sum += num;
+	}
+
+	media = sum / n;
+	cout<<"NUMERO MAYOR: "<<mayor<<endl;
+	cout<<"NUMERO MENOR: "<<menor<<endl;
+	cout<<"MEDIA TOTAL: "<<media<<endl;
+
+	return 0;
+}*/
+
+//EJRCICIO 6
+/*#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    int numero,fibo1,fibo2,i;
+   do
+   {
+         cout << "INDICAR LA CANTIDAD DE NUMEROS FIBONACCI QUE DESEA: ";
+         cin >> numero;
+   }while(numero<=1);
+   cout << endl;
+    cout << " LOS " << numero << " DE LA SERIE FIBONACCI SON:" << endl;
+   fibo1=1;
+   fibo2=1;
+   cout << fibo1 << " ";
+   for(i=2;i<=numero;i++)
+   {
+       cout << fibo2 << " ";
+       fibo2 = fibo1 + fibo2;
+       fibo1 = fibo2 - fibo1;
+   }
+ 
+}*/
+
+//EJERCICIO 7
+/*#include <iostream>
+#include <stdlib.h>
+#include <string>
+using namespace std;
+
+int main(){
+	float N1, N2, N3, P;
+	int cantidad;
+	string N;
+	cout<<"CUANTOS ESTUDIANTES SON: "<<endl;
+	cin>>cantidad;
+	for (int i=0 ; i<cantidad;i++){
+		cout << "INGRESE SU NOMBRE" << endl;
+		cin>>N;
+		cout << "INGRESE LA PRIMERA NOTA" << endl;
+		cin >> N1;
+		cout << "INGRESE LA SEGUNDA NOTA" << endl;
+		cin >> N2;
+		cout << "INGRESE LA TERCERA NOTA" << endl;
+		cin >> N3;
+		P = (N1 + N2 + N3) / 3;
+		cout << "ESTUDIANTE:" << N << endl;
+		cout << "PROMEDIO OBTENIDO ES:" << P << endl;
+		cout<<"---------------------------------"<<endl;
+	}
+}*/
+
+//EJERCICIO 8
+/*#include <iostream>
+using namespace std;
+
+int main(int argc, char *argv[]) {
+	int numero;
+	do{
+		cout<<"INGRESE UN NUMERO: ";
+		cin>>numero;
+		
+	}while((numero<1) || (numero>10));
+	
+	for(int i=1; i<=10; i++){
+		cout<<numero<<" * "<<i<<" = "<<numero * i<<endl;
+	}
+	return 0;
+}*/
+
+//EJERCICIO 9
+/*#include<iostream>
+using namespace std;
+ 
+int main()
+{
+	int i , n, valor;
+	cout<<"INDICAR LA CANTIDAD DE FILAS"<<endl;
+	cin>>valor;
+	cout<<endl;
+	for(i=1;i<=valor;i++){
+		for(n=1;i>=n;n++)
+			 cout<<"*";
+			cout<<"\n";
+	}
+}*/
+
+//EJERCICIO 10
+
+/*#include<iostream>
+#include <string.h>
+
+using namespace std;
+
+int main(){
+	char palabra[100];
+	int longitud;
+	cout<<"INDICAR UNA  PALABRA"<<endl;
+	cin>>palabra;
+	longitud =strlen(palabra);
+
+	for (int i=longitud; i>=0 ; i--)
+		cout<<palabra[i];
+
+}*/
+
