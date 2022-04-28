@@ -1,0 +1,177 @@
+//ALUMNA LUCIANA HUAMAN COAQUIRA
+//CUI:20210671
+
+//EJERCICIO 1
+/*#include <iostream>
+using namespace std;
+
+int fun_Potencia(int base, int exponente)
+{
+    int potencia=1;
+    for (int i=0;i<exponente;i++)
+    {
+        potencia*=base;
+    };
+    cout<<"LA POTENCIA ES: "<< potencia<<endl;
+}
+
+int main() {
+    int base,exponente;
+    cout<<"INDICAR LA BASE: ";
+    cin>>base;
+    cout<<"INDICAR EL EXPONENTE: ";
+    cin>>exponente;
+    fun_Potencia(base,exponente);
+
+}*/
+
+//EJERCICIO 2
+/*
+#include <iostream>
+using namespace std;
+
+void bisiesto(int fecha){
+    if (fecha%4==0 and fecha%100!=0 or fecha%400==0 ){
+        cout<<fecha<<" SI ES UN AñO BISIESTO"<<endl;
+    }
+    else {
+        cout<<fecha<<"NO ES UN AñO BISIESTO "<<endl;
+    }
+}
+
+int main()
+{
+    int fecha;
+    while(fecha=true){
+        cout<<"INDICAR AñO: "<<endl;
+        cin>>fecha;
+        bisiesto(fecha);
+    }
+}*/
+//EJERCICIO 3
+/*
+#include <iostream>
+using namespace std;
+ 
+//Prototipo de la funcion
+void Edad( int afecha , int mfecha, int dfech, int aNac, int mNac, int dNac){
+    int respFech , respMes;
+ 
+    if ( dfech < dNac  )
+        {   
+            dfech = dfech + 30; 
+             mfecha = mfecha - 1; 
+            respFech =  dfech - dNac; 
+        }
+    else 
+        respFech =  dfech - dNac;  
+ 
+    if( mfecha < mNac )
+    {   
+        mfecha = mfecha + 12; 
+        afecha = afecha - 1 ; 
+        respMes = mfecha - mNac; 
+    }
+    else 
+        respMes = mfecha - mNac; 
+ 
+    cout << "\nUSTED TIENE:\n";
+    cout << " EDAD: " <<afecha - aNac << endl; 
+    cout << " MESES: " << respMes << endl; 
+    cout << " DIAS: " << respFech << endl; 
+}
+ 
+int main ()
+{
+    int afecha , mfecha, dfech,aNac, mNac, dNac; 
+ 
+    cout << "CALCULAR SU EDAD"<<endl;
+    cout << "Año Actual: ";   cin >> afecha;
+    cout << "Mes Actual: ";   cin >> mfecha;
+    cout << "Fecha Actual: ";  cin >> dfech;
+ 
+    cout << "Año Nacimiento: ";  cin >> aNac;
+    cout << "Mes de Nacimiento: ";  cin >> mNac;
+    cout << "Fecha de Nacimiento: ";  cin >> dNac;
+
+    Edad(afecha ,mfecha,  dfech,  aNac,  mNac, dNac);
+
+}
+ */
+//EJERCICIO 4
+/*
+#include <iostream>
+using namespace std;
+void imprimir_primos(int rango){
+    int c=0,c2=0,res=0,nc=0;
+  	for(c=1;c<=rango;c++)
+  	{
+    	for(c2=1;c2<=c;c2++)
+    	{
+      	res=c%c2;
+      	if(res==0)
+      	{
+        	nc=nc+1;
+      	}
+    	}
+    	if(nc==2)
+    	{
+      	cout<<" "<<c;
+    	}
+    	nc=0;
+  }
+}
+
+int main(){
+    int rango;
+    cout<<"INDICAR EL RANGO DE NUMEROS PRIMOS QUE DESEA"<<endl;
+    cin>>rango;
+    imprimir_primos(rango);
+    return 0;
+}*/
+
+//EJERCICIO 5
+
+#include <iostream>
+using namespace std;
+
+bool ver(int numero)
+    {
+    if (numero % 2 == 0)
+        return true;
+    else
+        return false;
+}
+
+int suma(int numero)
+{
+    int RE = 0;
+    for (int i = 0; i <= numero; i++)
+    {
+    if (i % 2 == 1)
+        RE = RE + i;
+    }
+    return RE;
+}
+
+
+int main()
+
+{
+    int numero;
+    cout << "INDICAR NUMERO : "; 
+    cin >> numero;
+    if (numero >= 0 && numero <= 100)
+    {
+        if (ver(numero) == true){
+            cout<<"SI ES PAR "<<endl;
+            cout << "IMPARES SUMA ES : ";
+            cout<<suma(numero)<< endl;}
+        else{
+            cout << "NO ES PAR" << endl;}
+    }
+    else{
+        cout << "EL" << numero << " NO ES VALIDO";
+        return 0;
+    }
+}
