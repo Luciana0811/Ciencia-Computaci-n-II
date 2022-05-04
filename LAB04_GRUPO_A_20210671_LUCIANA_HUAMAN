@@ -1,0 +1,288 @@
+//PROBLEMA 1
+#include <iostream>
+#include <string>
+using namespace std;
+int main(){
+    string nombre[100],apellido[100];
+    int edad[100], dni[100];
+ 
+    for(int i=0; i<3; i++){
+        cout<<"USUARIO "<<i+1<<endl;
+        cout<<"NOMBRE: ";
+        cin>>nombre[i];
+        cout<<"APELLIDO: ";
+        cin>>apellido[i];
+        cout<<"EDAD: ";
+        cin>>edad[i];
+        cout<<"DNI: ";
+        cin>>dni[i];
+    }
+    cout<"MOSTRAR USUARIOS"<<endl;
+    for(int i=0; i<3; i++){
+        cout<<" USUARIO "<<i+1<<endl;
+        cout<<"NOMBRE: "<<nombre[i]<<endl;
+        cout<<"APELLIDO: "<<apellido[i]<<endl;
+        cout<<"EDAD: "<<edad[i]<<endl;
+        cout<<"DNI: "<<dni[i]<<endl;
+    }
+}
+
+//PROBLEMA 2
+#include <iostream>
+using namespace std;
+ 
+bool busqueda(int lista[], int longitudDeArreglo, int numero) {
+    for (int i = 0; i < longitudDeArreglo; i++) {
+        int elementoActual = lista[i];
+        if (elementoActual == numero) return true;
+    }
+    return false;
+}
+ 
+int main(){
+    int lista[8],numero;    
+    cout<<"INDICAR 8 DATOS EN LA LISTA"<<endl;
+    for(int i;i<8;i++){
+        cin>>lista[i];
+    }
+ 
+    cout<<"INDICAR NUMERO PARA BUSCAR "<<endl;
+    cin>>numero;
+    if(busqueda(lista,8,numero)==true){
+        cout<<"NUMERO ENCONTRADO"<<endl;
+    }
+    else{
+        cout<<"NUMERO NO ENCONTRADO"<<endl;
+    }
+}
+
+//PROBLEMA 3
+#include <iostream>
+using namespace std;
+int main(){
+    int m[5][3];
+    cout<<"INGRESAR ELEMENTOS DE LA MATRIZ: \n";
+    for (int i=0;i<5;i++){
+        for (int j=0;j<3;j++){
+            cout<<"MATRIZ ("<<i<<","<<j<<") : "<<endl;
+            cin>>m[i][j];
+        }
+        cout<<endl;
+ 
+    }
+    cout<<"SUMA DE FILAS PARES: ";
+    int suma=0;
+    for (int i=0;i<5;i++){
+        for (int j=0;j<3;j++){
+            if (i%2!=0){
+                suma+=m[i][j];
+                cout<<m[i][j]<<"\t ";
+            }
+        }
+        if (i%2!=0){
+            cout<<"SUMA DE LA FILA PAR ES " <<suma<<"\t";
+            }
+        suma=0;
+        cout<<endl;
+ 
+    }
+}
+
+//PROBLEMA 4
+#include <iostream>
+using namespace std;
+int main(){
+ 
+    int limite[100], posicion=0;
+    for(int i=2;i<=100;i++){
+        int aumentar=0;
+        for(int j=2;j<i;j++){
+            if(i%j==0){
+                aumentar++;
+            }
+        }
+        if(aumentar<1){
+            limite[posicion]=i;
+            posicion++;
+        }
+    }
+    cout<<"PRIMOS ORDEN DESCENDENTE"<<endl;
+    for(int i=24;i>=0;i--){
+        cout<<limite[i]<<endl;
+    }
+}
+
+//PROBLEMA 5
+
+#include <iostream>
+#include <string>
+using namespace std;
+ 
+int main() {
+    string productos[100]={"papa","pan","sal","ajo","arroz","pasta","naranaja","lechuga","chocolate","mantequilla"};
+    float precios[100]={10.5,3,4,5,3,7,3,4,6.5,6};
+    int stock[100]={4,3,4,5,3,7,3,4,6,6};
+    int n;
+    n=9;
+    cout<<"MENU DEL 1 al 4:"<<endl;
+    cout<<"1. Ingresar nuevo producto \n 2. Buscar producto \n 3. Modifique producto (stock y precio) \n 4. Mostrar informacion\n";
+    int a;
+    cin>>a;
+    switch(a) //donde opción es la variable a comparar
+    {
+        case 1: //Bloque de instrucciones 1;
+            n++;
+            cout<<"INGRESAR NOMBRE DEL PRODUCTO , PRECIO DEL PRODUCTO , STOCK DEL PRODUCTO: \n";
+            cin>>productos[n];
+            cin>>precios[n];
+            cin>>stock[n];
+ 
+        break;
+ 
+        case 2: //Bloque de instrucciones 2;
+            cout<<"NOMBRE A BUSCAR: \n";
+            cin>>productos[n];
+            cout<<productos[n];
+            cout<<"PRECIO: ";
+            cout<<precios[n];
+            cout<<"STOCK DEL PRODUCTO ";
+            cout<<stock[n];
+ 
+        break;
+        case 3: //Bloque de instrucciones 3;
+            cout<<"INDICAR NOMBRE A BUSCAR: \n";
+            cin>>productos[n];
+            cout<<"INDICAR NUEVO PRECIO Y STOCK: \n";
+ 
+            cin>>precios[n];
+            cin>>stock[n];
+ 
+        break;
+        case 4: //Bloque de instrucciones 3;
+            cout<<"INFORMACION DE LA TIENDA: \n";
+            for (int i=0;i<n;i++)
+            {
+                cout<<productos[i]<<"\t";
+                cout<<"PRECIO: ";
+                cout<<precios[i]<<"\t";
+                cout<<"STOCK DEL PRODUCTO ";
+                cout<<stock[i]<<endl;
+            }
+        break;
+      }
+      
+//PROBLEMA 6
+
+#include <iostream>
+using namespace std;
+ 
+int main(){
+    int m[3][3];
+    int max=0;
+    int f,c, suma[3];
+ 
+    cout<<"INGRESAR LOS ELEMENTOS DE LA MATRIZ"<<endl;
+    for(f=0;f<3;f++){
+        for(c=0;c<3;c++){
+            cout<<"ELEMENTO ("<<f+1<<","<<c+1<<")";
+            cin>>m[f][c];
+        }
+    }
+    cout<<"\nIMPRIMIR MATRIZ\n"<<endl;
+    for(f=0;f<3;f++){
+        for(c=0;c<3;c++){
+            cout<<m[f][c]<<" ";
+        }
+        cout<<endl;
+    }
+ 
+    for(f=0;f<3;f++){
+        suma[f]=0;
+        for(c=0;c<3;c++){
+            suma[f]=suma[f]+m[f][c];
+            if (suma[f]>max){
+                max=suma[f];
+            }
+        }
+        cout<<"\nLA SUMA DE LA FILA  "<<f+1<<" ES: "<<suma[f];
+    }
+    cout<<"\nSUMA MAXIMA ES : "<<max<<endl;
+ 
+}
+
+//PROBLEMA 7
+#include <iostream>
+using namespace std;
+int rfilas(int a, int b, int c, int m[3][3],int temp1[3]){
+    for (int j=0;j<c;j++){
+            temp1[j]=m[a][j];
+            m[a][j]=m[b][j];
+            m[b][j]=temp1[j];
+        }
+ 
+}
+int rcolumnas(int a, int b, int f, int m[3][3],int temp2[3]){
+    for (int i=0;i<f;i++){
+            temp2[i]=m[i][a];
+            m[i][a]=m[i][b];
+            m[i][b]=temp2[i];
+        }
+}
+ 
+int main(){
+    //creamos la matriz y sus variables
+    int m[3][3]={{4,13,14}, {4,5,6}, {7,8,9}};
+    int temp1[3],temp2[3];
+    int f,c, sumafila,a,b;
+    //imprimimos la matriz
+     cout<<"IMPRIMIR MATRIZ : \n"
+    ;
+    for(f=0;f<3;f++){
+        for(c=0;c<3;c++){
+            cout<<m[f][c]<<" ";
+        }
+        cout<<endl;
+ 
+    }
+    cout<<"MENU :\n 1. MOVER FILAS  2. MOVER COLUMNAS \n";
+    cin>>a;
+    switch(a)
+    {
+        case 1:
+    {
+        cout<<"MOVER FILAS ";
+        cout<<"INDICAR LA FILA A MOVER: \n";
+        cin>>a;
+        cin>>b;
+        rfilas(a, b,c,m,temp1);
+ 
+    }
+        for(f=0;f<3;f++){
+        for(c=0;c<3;c++){
+            cout<<m[f][c]<<" ";
+        }
+        cout<<endl;
+ 
+    }
+        break;
+        case 2:
+    {
+        cout<<"MOVER COLUMNAS ";
+        cout<<"INDICAR LA COLUMNA A MOVER: \n";
+        cin>>a;
+        cin>>b;
+        rcolumnas(a, b,c,m,temp2);
+        for(f=0;f<3;f++){
+        for(c=0;c<3;c++){
+            cout<<m[f][c]<<" ";
+        }
+        cout<<endl;
+    }
+      break;
+        }
+  }
+}
+ 
+
+
+
