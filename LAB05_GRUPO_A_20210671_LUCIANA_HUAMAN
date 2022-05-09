@@ -1,0 +1,212 @@
+//PROBLEMA 1
+#include <iostream>
+using namespace std;
+ 
+int main() {
+    int x,y,auxiliar;
+    int *ptrx=&x;
+    int *ptry=&y;
+    cout<<"INDICAR X: ";
+    cin>>x;
+    cout<<"INDICAR Y : ";
+    cin>>y;
+   
+    auxiliar=*ptrx;
+    *ptrx=*ptry;
+    *ptry=auxiliar;
+    cout<<"VALORES INTERCAMBIADOS SON:" <<endl;
+    cout<<"X :"<<x<<endl;
+    cout<<"Y :"<<y<<endl;
+}
+
+//PROBLEMA2
+
+#include <iostream>
+using namespace std;
+ 
+int main() {
+    int x,y,auxiliar;
+    int *ptrx=&x;
+    int *ptry=&y;
+    cout<<"INDICAR X: ";
+    cin>>x;
+    cout<<"INDICAR Y : ";
+    cin>>y;
+   
+    auxiliar=*ptrx;
+    *ptrx=*ptry;
+    *ptry=auxiliar;
+    cout<<"VALORES INTERCAMBIADOS SON:" <<endl;
+    cout<<"X :"<<x<<endl;
+    cout<<"Y :"<<y<<endl;
+}
+
+//PROBLEMA 3
+using namespace std;
+void mostrar(float** vector,int longitud,int longitud2);
+ 
+void eliminar(float** vector,int longitud,int longitud2);
+ 
+void ordenar(float** vector,int longitud,int longitud2);
+   
+void insertar(float** vector,int longitud,int longitud2);
+int main(){
+    int longitud,longitud2;
+    longitud=4;
+    longitud2=4;
+    float** vector=new float*[longitud];
+    for(int i=0;i<longitud;i++){
+        vector[i]=new float[longitud2];
+    }
+    insertar(vector,longitud,longitud2);
+    ordenar(vector,longitud,longitud2);
+    mostrar(vector,longitud,longitud2);
+    eliminar(vector,longitud,longitud2);
+    for(int i=0;i<longitud2;i++){
+        delete[] vector[i];
+    }
+    delete[]vector;
+}
+ 
+void mostrar(float** vector,int longitud,int longitud2){
+    cout<<"VECTOR DE NUMEROS:"<<endl;
+    for(int i=0;i<longitud;i++){
+        for(int j=0;j<longitud2;j++){
+            cout<<vector[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    cout<<endl;
+}
+void eliminar(float** vector,int longitud,int longitud2){
+    int fila,columna;
+    cout<<"INDICAR:"<<endl;
+    cout<<"FILA: ";
+    cin>>fila;
+    cout<<"COLUMNA: ";
+    cin>>columna;
+    vector[fila-1][columna-1]=0;
+    mostrar(vector,longitud,longitud2);
+}
+void ordenar(float** vector,int longitud,int longitud2){
+    srand(time(NULL));
+    for(int i=0;i<longitud;i++){
+        for(int j=0;j<longitud2-1;j++){
+            int aux=0;
+            for(int h=0;h<longitud2-1;h++){
+                if(vector[i][h]>vector[i][h+1]){
+                    aux=vector[i][h+1];
+                    vector[i][h]=vector[i][h+1];
+                    vector[i][h+1]=aux;
+                }
+            }
+        }
+    }
+   
+}
+void insertar(float** vector,int longitud,int longitud2){
+    srand(time(NULL));
+    for(int i=0;i<longitud;i++){
+        for(int j=0;j<longitud2;j++){
+            vector[i][j]=1+rand()%(10-1);
+        }
+    }
+}
+//PROBLEMA 4
+
+//PROBLEMA 5
+int main(){
+    int longitud,longitud2;
+    cout<<"TAMAÑO PRIMER VECTOR: "<<endl;
+    cin>>longitud;
+    cout<<"TAMAÑO SEGUNDO VECTOR: "<<endl;
+    cin>>longitud2;
+    string* vector1=new string[longitud];
+    string* vector2=new string[longitud2];
+    string* concatenacion=new string[longitud+longitud2];
+    cout<<"VECTOR 1: "<<endl;
+    llenar(vector1,longitud);
+    cout<<"VECTOR 2: "<<endl;
+    llenar(vector2,longitud2);
+    concatenar(vector1,vector2,concatenacion,longitud,longitud2);
+    mostrar(concatenacion,(longitud+longitud2));
+    delete[] vector1;
+    delete[] vector2;
+    delete[] concatenacion;
+}
+ 
+void llenar(string*vector,int longitud){
+    cout<<"INDICAR PALABRAS DEL VECTOR: "<<endl;
+    for(int i=0;i<longitud;i++){
+        cin>>vector[i];
+    }
+}
+void mostrar(string*vector,int longitud){
+    cout<<endl;
+    cout<<"TEXTO CONCATENADO: "<<endl;
+    for(int i=0;i<longitud;i++){
+        cout<<vector[i];
+    }
+    cout<<endl;
+}
+void concatenar(string*vector,string*vector1,string*concatenacion,int longitud,int longitud2){
+    int longitudtotal=0;
+    int i=0;
+    for(;i<longitud2;i++){
+        concatenacion[i]=vector1[i];
+    }
+    int j=0;
+    for(;j<longitud;j++){
+        concatenacion[i]=vector[j];
+        i++;
+    }
+}
+
+//PROBLEMA 6
+
+int main(){
+    int longitud,longitud2;
+    cout<<"TAMAÑO PRIMER VECTOR: "<<endl;
+    cin>>longitud;
+    cout<<"TAMAÑO SEGUNDO VECTOR: "<<endl;
+    cin>>longitud2;
+    string* vector1=new string[longitud];
+    string* vector2=new string[longitud2];
+    string* concatenacion=new string[longitud+longitud2];
+    cout<<"VECTOR 1: "<<endl;
+    llenar(vector1,longitud);
+    cout<<"VECTOR 2: "<<endl;
+    llenar(vector2,longitud2);
+    concatenar(vector1,vector2,concatenacion,longitud,longitud2);
+    mostrar(concatenacion,(longitud+longitud2));
+    delete[] vector1;
+    delete[] vector2;
+    delete[] concatenacion;
+}
+ 
+void llenar(string*vector,int longitud){
+    cout<<"INDICAR PALABRAS DEL VECTOR: "<<endl;
+    for(int i=0;i<longitud;i++){
+        cin>>vector[i];
+    }
+}
+void mostrar(string*vector,int longitud){
+    cout<<endl;
+    cout<<"TEXTO CONCATENADO: "<<endl;
+    for(int i=0;i<longitud;i++){
+        cout<<vector[i];
+    }
+    cout<<endl;
+}
+void concatenar(string*vector,string*vector1,string*concatenacion,int longitud,int longitud2){
+    int longitudtotal=0;
+    int i=0;
+    for(;i<longitud2;i++){
+        concatenacion[i]=vector1[i];
+    }
+    int j=0;
+    for(;j<longitud;j++){
+        concatenacion[i]=vector[j];
+        i++;
+    }
+}
