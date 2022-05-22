@@ -1,0 +1,4 @@
+Realice un programa que defina varias formas diferentes, cree un vector de
+punteros de la clase Forma que apunten a los objetos creados. El programa debe
+realizar un bucle que recorra todas las formas, las ponga todas del mismo color y
+las mueva a una determinada posición.
