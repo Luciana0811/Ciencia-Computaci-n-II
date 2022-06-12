@@ -1,0 +1,2 @@
+Dado una posición válida dentro de la lista, permita al usuario eliminar un elemento
+de cualquier posición sin perder referencia de los demás elementos.
