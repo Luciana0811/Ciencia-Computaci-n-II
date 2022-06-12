@@ -1,0 +1,4 @@
+Desarrolle un algoritmo de ordenamiento que permita ordenar los elementos de forma
+ascendente y descendente de acuerdo a la elección del usuario. Se debe poder simular
+el ingreso de 10 mil elementos de forma aleatoria y ordenarlos en el menor tiempo
+posible ( < 2 seg).
