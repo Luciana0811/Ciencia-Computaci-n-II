@@ -1,0 +1,4 @@
+Desarrolle una función que permita eliminar el primer elemento de una lista sin perder
+referencia de los demás elementos que ya se encuentran almacenados en la estructura
+.(Evite copiar los elementos en una nueva lista para completar la eliminación de los
+elementos)
